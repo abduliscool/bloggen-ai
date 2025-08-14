@@ -2,7 +2,7 @@ import Image from 'next/image';
 import '@/app/styles/background.css';
 import Header from '@/app/components/Header';
 import FloatingShapes from '@/app/components/background/FloatingShapes';
-
+ 
 export default function Home() {
   return (
     <main className="relative min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
