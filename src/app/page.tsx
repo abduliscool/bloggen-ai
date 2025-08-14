@@ -1,11 +1,20 @@
 import Image from 'next/image';
-import Header from './components/Header';
+import '@/app/styles/background.css';
+import Header from '@/app/components/Header';
+import FloatingShapes from '@/app/components/background/FloatingShapes';
 
 export default function Home() {
   return (
-    <><Header /><main className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <main className="relative min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+      <FloatingShapes /><Header />
+
+      {/* Background options */}
+      
+      {/* <ParticleBackground /> */}
+
       {/* Hero Section */}
-      <section className="flex flex-col-reverse md:flex-row items-center max-w-7xl mx-auto px-6 py-20 gap-10">
+      <section className="relative z-10 flex flex-col-reverse md:flex-row items-center max-w-7xl mx-auto px-6 py-20 gap-10">
+        {/* Text content */}
         <div className="flex-1 space-y-6">
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
             BlogGen AI
@@ -29,13 +38,15 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Image */}
         <div className="flex-1 flex justify-center">
           <Image
             src="/bloggen-preview.png"
             alt="BlogGen AI Preview"
             width={500}
             height={400}
-            className="rounded-xl shadow-xl" />
+            className="rounded-xl shadow-xl"
+          />
         </div>
       </section>
 
@@ -66,8 +77,8 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-gray-100 dark:bg-gray-900 py-10 mt-20 text-center text-gray-600 dark:text-gray-400">
-        © 2025 BlogGen AI — Built with Next.js & Tailwind CSS
+        © 2025 BlogGen AI
       </footer>
-    </main></>
+    </main>
   );
 }
